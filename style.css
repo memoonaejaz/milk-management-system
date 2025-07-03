@@ -1,0 +1,124 @@
+/* General styling */
+body {
+  background-color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+h1, h2, h4 {
+  color: #343a40;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+/* Dashboard Container */
+.dashboard-wrapper {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 6%;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-body h5 {
+  font-size: 17px;
+  color: #444;
+  font-weight: 600;
+}
+
+.card-body p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  min-width: 130px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #4e73df;
+  border: none;
+}
+
+.btn-success {
+  background-color: #1cc88a;
+  border: none;
+}
+
+.btn-dark {
+  background-color: #343a40;
+  border: none;
+}
+
+.text-center a.btn {
+  margin: 0 10px 10px 10px;
+}
+
+/* Tables */
+.table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+/* Forms */
+form .form-label {
+  font-weight: 500;
+}
+
+form input {
+  border-radius: 6px;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-body p {
+    font-size: 18px;
+  }
+
+  .dashboard-wrapper {
+    padding: 20px;
+    margin-top: 15%;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

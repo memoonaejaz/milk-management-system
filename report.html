@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Milk Reports</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    h2, h4, h5 {
+      color: #198754;
+      font-weight: 600;
+    }
+    .table {
+      background-color: #fff;
+    }
+    label {
+      font-weight: 500;
+    }
+    .btn {
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .summary-box {
+      background-color: #e9fbe9;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    canvas {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    @media (max-width: 576px) {
+      .container {
+        padding: 20px 15px;
+      }
+    }
+    #filterRangeRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">📋 Milk Management Reports</h2>
+
+    <!-- Filter Section -->
+    <div class="row mb-4" id="filterRangeRow">
+      <div class="col-md-3">
+        <label for="reportType">Report Type:</label>
+        <select class="form-select" id="reportType" onchange="handleReportTypeChange()">
+          <option value="none" disabled>Select Type</option>
+          <option value="daily" selected>Today</option>
+          <option value="weekly">This Week</option>
+          <option value="monthly">This Month</option>
+          <option value="custom">Custom Range</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="startDate">From:</label>
+        <input type="date" id="startDate" class="form-control" disabled>
+      </div>
+      <div class="col-md-3">
+        <label for="endDate">To:</label>
+        <input type="date" id="endDate" class="form-control" disabled>
+      </div>
+      <div class="col-md-3">
+        <label for="searchName">Search Name:</label>
+        <input type="text" id="searchName" class="form-control" oninput="filterRecords()" placeholder="Buyer/Supplier Name">
+      </div>
+      <div class="col-md-3 mt-2">
+        <button onclick="filterRecords()" class="btn btn-primary w-100">🔍 Apply Filter</button>
+      </div>
+    </div>
+
+    <!-- Purchase Table -->
+    <h4 class="mb-3">🛒 Purchase Records</h4>
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Supplier</th>
+          <th>Quantity (L)</th>
+          <th>Rate</th>
+          <th>Total Price</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="purchaseTable"></tbody>
+    </table>
+    <button class="btn btn-outline-primary mb-4" onclick="exportTableToCSV('purchaseTable', 'purchases.csv')">📥 Export Purchases CSV</button>
+
+    <!-- Sale Table -->
+    <h4 class="mt-5 mb-3">💼 Sale Records</h4>
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Customer</th>
+          <th>Quantity (L)</th>
+          <th>Rate</th>
+          <th>Total Price</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="saleTable"></tbody>
+    </table>
+    <button class="btn btn-outline-success mb-4" onclick="exportTableToCSV('saleTable', 'sales.csv')">📥 Export Sales CSV</button>
+
+    <!-- Summary -->
+    <div class="summary-box">
+      <h5>📊 Summary:</h5>
+      <p><strong>Total Milk Purchased:</strong> <span id="purchasedLiters">0</span> L | Rs. <span id="totalCost">0</span></p>
+      <p><strong>Total Milk Sold:</strong> <span id="soldLiters">0</span> L | Rs. <span id="totalIncome">0</span></p>
+      <p><strong>Profit:</strong> Rs. <span id="profit">0</span></p>
+      <button class="btn btn-dark mt-2" onclick="window.print()">🖨️ Print Report</button>
+    </div>
+
+    <!-- Chart -->
+    <div class="my-5">
+      <h4 class="text-center mb-3">📈 Milk Purchase vs Sales</h4>
+      <canvas id="milkChart" height="100"></canvas>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="index.html" class="btn btn-secondary">⬅️ Back to Dashboard</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="report.js"></script>
+</body>
+</html>

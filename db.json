@@ -1,0 +1,131 @@
+{
+  "purchases": [
+    {
+      "id": "5b58",
+      "supplier": "Ahmad Khan",
+      "quantity": 30,
+      "rate": 170,
+      "date": "2025-06-06"
+    },
+    {
+      "id": "923a",
+      "supplier": "anas ",
+      "quantity": 34,
+      "rate": 200,
+      "date": "2025-06-09"
+    },
+    {
+      "id": "ecd6",
+      "supplier": "iman khan",
+      "quantity": 120,
+      "rate": 90,
+      "date": "2025-06-25"
+    },
+    {
+      "id": "a340",
+      "supplier": "khan",
+      "quantity": 123,
+      "rate": 210,
+      "date": "2025-06-24"
+    },
+    {
+      "id": "2a58",
+      "supplier": "ahmad ali",
+      "quantity": 45,
+      "rate": 310,
+      "date": "2025-06-26"
+    },
+    {
+      "id": "a015",
+      "supplier": "mona",
+      "quantity": 13,
+      "rate": 180,
+      "date": "2025-07-01"
+    }
+  ],
+  "sales": [
+    {
+      "id": "1",
+      "customer": "Ali Khan",
+      "quantity": 20,
+      "rate": 140,
+      "date": "2025-06-25"
+    },
+    {
+      "id": "253b",
+      "customer": "Faraz",
+      "quantity": 5,
+      "rate": 140,
+      "date": "2025-06-23"
+    },
+    {
+      "id": "8789",
+      "customer": "Farhana",
+      "quantity": 150,
+      "rate": 140,
+      "date": "2025-06-06"
+    },
+    {
+      "id": "113c",
+      "customer": "Ghana",
+      "quantity": 56,
+      "rate": 140,
+      "date": "2025-06-07"
+    },
+    {
+      "id": "6514",
+      "customer": "Muntaaha",
+      "quantity": 89,
+      "rate": 140,
+      "date": "2025-06-08"
+    },
+    {
+      "id": "0968",
+      "customer": "ghani",
+      "quantity": 34,
+      "rate": 45,
+      "date": "2025-06-11"
+    },
+    {
+      "id": "9e36",
+      "customer": "faheem",
+      "quantity": 35,
+      "rate": 210,
+      "date": "2025-06-10"
+    },
+    {
+      "id": "da27",
+      "customer": "irtaza",
+      "quantity": 100,
+      "rate": 210,
+      "date": "2025-06-25"
+    },
+    {
+      "id": "9a63",
+      "customer": "ali",
+      "quantity": 20,
+      "rate": 220,
+      "date": "2025-06-24"
+    },
+    {
+      "id": "1055",
+      "customer": "faraz ahmad",
+      "quantity": 12,
+      "rate": 220,
+      "date": "2025-06-26"
+    },
+    {
+      "id": "d158",
+      "customer": "dua",
+      "quantity": 20,
+      "rate": 320,
+      "date": "2025-07-01"
+    }
+  ],
+  "settings": [
+    {
+      "id": "1",
+      "sellingPrice": 320
+    }
+  ]
+}

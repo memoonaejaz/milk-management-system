@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Milk</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f1f5f9;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-weight: 600;
+      color: #4e73df;
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn {
+      border-radius: 8px;
+      font-weight: 500;
+      padding: 10px 20px;
+    }
+
+    #msgBox {
+      font-weight: 500;
+      color: green;
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center">🛒 Buy Milk</h2>
+    <form id="buyForm">
+      <div class="mb-3">
+        <label for="supplier" class="form-label">Supplier Name</label>
+        <input type="text" class="form-control" id="supplier" placeholder="e.g., Ahmed Dairy" required />
+      </div>
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity (liters)</label>
+        <input type="number" class="form-control" id="quantity" placeholder="e.g., 50" required />
+      </div>
+      <div class="mb-3">
+        <label for="rate" class="form-label">Rate per Liter (Rs.)</label>
+        <input type="number" class="form-control" id="rate" placeholder="e.g., 110" required />
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Purchase Date</label>
+        <input type="date" class="form-control" id="date" required />
+      </div>
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">💾 Save Purchase</button>
+        <a href="index.html" class="btn btn-secondary">⬅️ Back</a>
+      </div>
+    </form>
+    <div class="mt-4 text-center" id="msgBox"></div>
+  </div>
+
+  <script src="buy.js"></script>
+</body>
+</html>
